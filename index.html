@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4CAF50">
+  <link rel="stylesheet" href="style.css">
+  <title>SkunCalculator</title>
+</head>
+<body>
+  <header>
+    <h1>SkunCalculator</h1>
+  </header>
+  <main>
+    <section id="settings">
+      <h2>Ustawienia</h2>
+      <form id="price-form">
+        <label for="price-per-unit">Cena za 1 szt:</label>
+        <input type="number" id="price-per-unit" placeholder="Cena za 1 szt (domyślnie 50 zł)" step="0.01" required>
+        <label for="currency">Waluta:</label>
+        <select id="currency">
+          <option value="PLN">PLN</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+        </select>
+        <button type="submit">Zapisz ustawienia</button>
+      </form>
+    </section>
+    <section id="add-transaction">
+      <h2>Dodaj/zmień transakcję</h2>
+      <form id="transaction-form">
+        <label for="person">Imię osoby:</label>
+        <input type="text" id="person" placeholder="Imię osoby" required>
+        <label for="amount">Kwota (w szt):</label>
+        <input type="number" id="amount" placeholder="Kwota (np. 0.5 szt)" step="0.01" required>
+        <label for="repayment-date">Data spłaty:</label>
+        <input type="date" id="repayment-date" placeholder="Data spłaty">
+        <button type="submit">Dodaj/Zaktualizuj</button>
+      </form>
+    </section>
+    <section id="group-split">
+      <h2>Podział kosztów</h2>
+      <form id="group-form">
+        <label for="group-people">Osoby (oddzielone przecinkami):</label>
+        <input type="text" id="group-people" placeholder="np. Jan, Maria, Piotr" required>
+        <label for="group-amount">Całkowita kwota:</label>
+        <input type="number" id="group-amount" placeholder="Kwota do podziału" step="0.01" required>
+        <button type="submit">Podziel koszty</button>
+      </form>
+    </section>
+    <section id="transactions">
+      <h2>Lista transakcji</h2>
+      <ul id="transaction-list"></ul>
+      <p id="total">Łączna suma: 0 zł</p>
+    </section>
+    <section id="history">
+      <h2>Historia transakcji</h2>
+      <ul id="history-list"></ul>
+    </section>
+    <section id="export">
+      <h2>Eksport danych</h2>
+      <button id="export-csv">Eksportuj do CSV</button>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 SkunCalculator. Wszystkie prawa zastrzeżone.</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
